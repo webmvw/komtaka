@@ -18,7 +18,11 @@ use App\Http\Livewire\CheckoutComponent;
 */
 
 
-Route::get('/', HomeComponent::class);
-Route::get('/shop', ShopComponent::class);
-Route::get('/cart', CartComponent::class);
-Route::get('/checkout', CheckoutComponent::class);
+Route::get('/', HomeComponent::class)->name('home');
+Route::get('/shop', ShopComponent::class)->name('shop');
+Route::get('/cart', CartComponent::class)->name('cart');
+Route::get('/checkout', CheckoutComponent::class)->name('checkout');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
