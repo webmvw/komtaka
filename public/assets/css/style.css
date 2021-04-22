@@ -68,6 +68,9 @@ button:hover, button:focus, button:visited, button:active{
 	text-decoration: none;
 	outline: none;
 }
+.text-red-600{
+    color:red;
+}
 .mercado-panel a{
     color: #666666;
 }
