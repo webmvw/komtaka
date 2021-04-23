@@ -4,7 +4,14 @@
     		<div class="col-md-12">
     			<div class="panel panel-default">
     				<div class="panel-heading">
-    					Categories
+    					<div class="row">
+    						<div class="col-md-6">
+    							<div class="panel-title">Categories</div>
+    						</div>
+    						<div class="col-md-6">
+    							<a href="{{route('admin.add.category')}}" class="btn btn-success pull-right">Add Category</a>
+    						</div>
+    					</div>
     				</div>
     				<div class="panel-body">
     					<table class="table table-striped">

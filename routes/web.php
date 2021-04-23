@@ -10,6 +10,7 @@ use App\Http\Livewire\User\UserDashboardComponent;
 use App\Http\Livewire\ProductDetailsComponent;
 use App\Http\Livewire\CategoryComponent;
 use App\Http\Livewire\Admin\AdminCategoryComponent;
+use App\Http\Livewire\Admin\AdminAddCategoryComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +41,7 @@ Route::get('/product/category_name/{slug}', CategoryComponent::class)->name('pro
 Route::middleware(['auth:sanctum', 'verified', 'authAdmin'])->group(function(){
 	Route::get('/admin/dashboard', AdminDashboardComponent::class)->name('admin.dashboard');
 	Route::get('/admin/categories', AdminCategoryComponent::class)->name('admin.categories');
+	Route::get('/admin/category/add', AdminAddCategoryComponent::class)->name('admin.add.category');
 });
 
 
