@@ -14,6 +14,11 @@
     					</div>
     				</div>
     				<div class="panel-body">
+                        @if(Session::has('success'))
+                        <div class="alert alert-success" role="alert">
+                            {{Session::get('success')}}
+                        </div>
+                        @endif
     					<table class="table table-striped">
     						<thead>
     							<tr>
@@ -31,7 +36,7 @@
     								<td>{{$value->slug}}</td>
     								<td>
     									<a href="{{route('admin.edit.category', $value->slug)}}" class="btn btn-sm btn-success">Edit</a>
-    									<a href="#" class="btn btn-sm btn-danger">Delete</a>
+    									<a href="#" onclick="return confirm('Are you sure to delete it?')" wire:click.prevent="deleteCategory({{$value->id}})" class="btn btn-sm btn-danger">Delete</a>
     								</td>
     							</tr>
     							@endforeach
