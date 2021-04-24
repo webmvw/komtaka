@@ -84,6 +84,11 @@
 															Products
 														</a>
 													</li>
+													<li class="menu-item">
+														<a href="{{route('admin.homesliders')}}">
+															Home Slider
+														</a>
+													</li>
 													<li>
 														<a title="Logout" href="{{ route('logout') }}"
 					                                       onclick="event.preventDefault();
