@@ -13,6 +13,9 @@
 					</div>
 				</div>
 				<div class="panel-body">
+					@if(Session::has('success'))
+                    	<div class="alert alert-success" role="alert">{{Session::get('success')}}</div>
+                    @endif
 					<table class="table table-striped">
 						<thead>
 							<tr>
@@ -39,8 +42,8 @@
 								<td>{{$value->category->name}}</td>
 								<td>{{$value->created_at}}</td>
 								<td>
-									<a href="#" class="btn btn-sm btn-success">Edit</a>
-									<a href="#" class="btn btn-sm btn-danger">Delete</a>
+									<a href="{{route('admin.edit.product', $value->slug)}}" class="btn btn-sm btn-success">Edit</a>
+									<a href="#" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure to delete it?')" wire:click.prevent="deleteProduct({{$value->id}})">Delete</a>
 								</td>
 							</tr>
 							@endforeach
