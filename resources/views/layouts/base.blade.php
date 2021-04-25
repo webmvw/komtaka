@@ -85,9 +85,10 @@
 														</a>
 													</li>
 													<li class="menu-item">
-														<a href="{{route('admin.homesliders')}}">
-															Home Slider
-														</a>
+														<a href="{{route('admin.homesliders')}}">Home Slider</a>
+													</li>
+													<li class="menu-item">
+														<a href="{{route('admin.show.homecategory')}}">Home Category</a>
 													</li>
 													<li>
 														<a title="Logout" href="{{ route('logout') }}"
