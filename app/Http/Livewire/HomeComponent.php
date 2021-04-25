@@ -14,6 +14,7 @@ class HomeComponent extends Component
     	$homesliders = HomeSlider::where('status', '1')->get();
     	$latest_products = Product::orderBy('created_at', 'desc')->get()->take(10);
     	$homecategories = HomeCategory::all();
-        return view('livewire.home-component', ['homesliders'=>$homesliders, 'latest_products'=>$latest_products, 'homecategories'=>$homecategories])->layout('layouts.base');
+    	$OnSaleProduct = Product::where('sale_price', '>', 0)->inRandomOrder()->get()->take(10);
+        return view('livewire.home-component', ['homesliders'=>$homesliders, 'latest_products'=>$latest_products, 'homecategories'=>$homecategories, 'OnSaleProduct'=>$OnSaleProduct])->layout('layouts.base');
     }
 }
